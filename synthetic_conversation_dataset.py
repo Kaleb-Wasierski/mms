@@ -1,4 +1,7 @@
 """
+# Copyright (c) 2025 Kaleb J. Wasierski
+# Licensed for non‑commercial use only — see LICENSE.txt in the repo root.
+
 synthetic_conversation_dataset.py
 ---------------------------------
 Generates a synthetic dataset of conversation dynamics for demonstration purposes.
