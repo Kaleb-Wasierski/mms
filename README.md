@@ -1,5 +1,6 @@
-# mms
- 1. Conversation Pipeline
+# mms repo
+
+- The Conversation Pipeline
 
 1. Input: User sends a message.
 
@@ -30,7 +31,7 @@ Cognitive Load : Compute attention variance or embedding variance across tokens.
 
 ---
 
-2. Real-Time Interaction
+- Real-Time Interaction
 
 While conversing, you can do:
 
@@ -55,7 +56,7 @@ From this, you can see which turns are exploratory (high N, low C) vs routine (l
 
 ---
 
-3. LLM “Self-Analysis” Conversation
+- LLM “Self-Analysis” Conversation
 
 You could have an LLM analyze itself in real-time:
 
@@ -88,7 +89,7 @@ Adjust constraint → be more creative or literal.
 
 ---
 
-4. Optional Enhancements
+- Optional Enhancements
 
 Temporal weighting: Older turns influence novelty less.
 
