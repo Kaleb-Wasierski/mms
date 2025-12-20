@@ -1,0 +1,137 @@
+1. Setup and Notation
+
+Let a conversation be a sequence of turns:
+
+T = \{t_1, t_2, \dots, t_n\}
+
+Each turn  can be represented by an embedding vector  (from an LLM or embedding model).
+
+Define:
+
+ = Novelty of turn 
+
+ = Constraint of turn 
+
+ = Cognitive load of turn 
+
+
+We track the sequence of metrics:
+
+\mathbf{N} = \{N_1, N_2, \dots, N_n\}, \quad
+\mathbf{C} = \{C_1, C_2, \dots, C_n\}, \quad
+\mathbf{L} = \{L_1, L_2, \dots, L_n\}
+
+
+---
+
+2. Novelty (N)
+
+Novelty measures how different the current turn is from previous turns. Using cosine similarity:
+
+\text{sim}(E_i, E_j) = \frac{E_i \cdot E_j}{\|E_i\| \|E_j\|}
+
+Define novelty for turn  as:
+
+N_i = 1 - \max_{j < i} \text{sim}(E_i, E_j)
+
+High  turn is very different from previous context
+
+Low  turn is similar to prior conversation
+
+
+Optional: For temporal weighting:
+
+N_i = 1 - \sum_{j=1}^{i-1} w_{i,j} \, \text{sim}(E_i, E_j)
+
+with ,  decaying influence of older turns.
+
+
+---
+
+3. Constraint (C)
+
+Constraint measures how limited or “forced” the response is relative to context. Operationally, this can be defined as entropy over token probabilities from the LLM:
+
+Let  be the probability distribution over next-token choices at turn :
+
+H(P_i) = - \sum_{k=1}^{m} p_{i,k} \log p_{i,k}
+
+Define constraint as:
+
+C_i = 1 - \frac{H(P_i)}{\log m}
+
+High  low entropy → highly constrained
+
+Low  high entropy → unconstrained, open-ended response
+
+
+
+---
+
+4. Cognitive Load (L)
+
+Cognitive load can be variance or dispersion of attention/activations across the model or topics:
+
+If using attention matrices  from the LLM:
+
+
+L_i = \text{Var}(\text{flatten}(A_i))
+
+Or simpler: variance in embedding differences between tokens:
+
+
+L_i = \text{Var}(\{E_{i,t} - E_{i,t-1}\}_{t=2}^{T_i})
+
+High  complex / multi-threaded content
+
+Low  simple / narrow content
+
+
+
+---
+
+5. Optional Perplexity Tracking
+
+Per-turn perplexity can be incorporated to normalize constraint:
+
+\text{PP}_i = 2^{H(P_i)}
+
+Normalized load or constraint can use perplexity:
+
+C_i' = \frac{C_i}{\text{PP}_i}, \quad L_i' = L_i \cdot \text{PP}_i
+
+
+---
+
+6. Throughput and Aggregation
+
+For throughput metrics across conversation:
+
+Average Novelty: 
+
+Average Constraint: 
+
+Average Load: 
+
+Turn Rate (TR): 
+
+Directional Coverage: proportion of novelty spikes above threshold :
+
+
+\text{DC} = \frac{|\{i: N_i > \theta\}|}{n}
+
+
+---
+
+7. Implementation Notes
+
+Embeddings: OpenAI embeddings, Hugging Face sentence transformers, or token-level activations
+
+Entropy / Constraint: use LLM logits
+
+Load: can be attention variance, embedding variance, or token complexity
+
+
+This model produces real, falsifiable, measurable outputs for each conversation turn.
+
+
