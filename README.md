@@ -1,6 +1,5 @@
 # mms
-
-1. Conversation Pipeline
+ 1. Conversation Pipeline
 
 1. Input: User sends a message.
 
@@ -8,7 +7,7 @@
 2. LLM Response: Generate response  using your chosen LLM.
 
 
-3. Embed: Compute embedding  for .
+3. Embed: Compute embeddings
 
 
 4. Metrics Computation:
