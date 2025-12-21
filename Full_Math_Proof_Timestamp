@@ -1,3 +1,66 @@
+"""
+This is a turn-level analytical framework for conversations that treats dialogue as a measurable signal over time. Each turn is mapped to three orthogonal quantities—novelty, constraint, and cognitive load—derived from embeddings and model internals. The goal is not interpretation or psychology, but reproducible metrics.
+
+What problem it solves
+It provides a way to:
+
+Detect when a conversation meaningfully changes direction (novelty),
+
+Quantify how “forced” or open-ended a response space is (constraint),
+
+Estimate structural complexity without semantic labeling (cognitive load).
+
+
+This allows conversations to be compared, segmented, or stress-tested quantitatively.
+
+How to read it
+
+Sections 1–2 define the state space (turns + embeddings) and novelty as a distance-from-history measure.
+
+Section 3 reframes entropy as constraint rather than uncertainty.
+
+Section 4 treats complexity as dispersion, not meaning.
+
+Sections 5–6 normalize and aggregate so the metrics are usable at scale.
+
+
+You do not need all components to use the model; each metric is independently deployable.
+
+Important assumptions (explicitly call these out)
+
+Embeddings are treated as stable proxies for semantic position.
+
+Token entropy is treated as a proxy for degrees of freedom, not quality.
+
+“Cognitive load” is a structural signal, not a claim about human cognition.
+
+
+These are engineering assumptions, not philosophical ones.
+
+What this is not
+
+Not a truth or correctness metric.
+
+Not sentiment analysis or intent inference.
+
+Not a claim about human mental states.
+
+
+It measures model-visible structure, nothing more.
+
+Why this matters
+Because the outputs are falsifiable and turn-indexed, the model can be:
+
+Validated against perturbations,
+
+Compared across agents or prompts,
+
+Used as a control signal (throttling novelty, bounding constraint, etc.).
+
+
+In short: this is a control-and-observability layer for conversational systems, expressed in math instead of heuristics.
+"""
+
 1. Setup and Notation
 
 Let a conversation be a sequence of turns:
