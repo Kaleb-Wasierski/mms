@@ -25,12 +25,8 @@ Cognitive Load : Compute attention variance or embedding variance across tokens.
 5. Optional: Normalize using perplexity if needed.
 
 
-6. Store metrics in sequence: .
+6. Store metrics in sequence:
 
-
-
-
----
 
 - Real-Time Interaction
 
