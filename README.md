@@ -47,9 +47,11 @@ Example:
 
 Turn	N	C	L
 
-1	0.9	0.3	0.1
-2	0.2	0.7	0.05
-3	0.6	0.4	0.15
+1	|| 0.9	0.3	0.1
+
+2	|| 0.2	0.7	0.05
+
+3	|| 0.6	0.4	0.15
 
 
 From this, you can see which turns are exploratory (high N, low C) vs routine (low N, high C), and where cognitive effort is concentrated.
