@@ -1,4 +1,5 @@
 # The Conversation Pipeline
+---
 
 1. Input: User sends a message.
 
@@ -24,6 +25,7 @@ Cognitive Load : Compute attention variance or embedding variance across tokens.
 
 6. Store metrics in sequence:
 
+---
 
 ## Real-Time Interaction
 
@@ -36,7 +38,7 @@ Constraint alerts: Identify when the model is “forced” vs open-ended.
 Direction tracking: Use novelty and constraint to measure conversational coverage and exploration.
 
 
-Example:
+### Example:
 
 Turn	N	C	L
 
@@ -79,10 +81,6 @@ Reduce load → simplify explanations.
 
 Adjust constraint → be more creative or literal.
 
-
-
-
-
 ---
 
 - Optional Enhancements
@@ -97,7 +95,11 @@ Decision making: Use metrics to guide conversation strategies: exploration, clar
 
 
 ---
+Benchmark #1 (test): https://github.com/Kaleb-Wasierski/mms/blob/main/inf-stability-benchmarking_v01.py
 
+
+
+---
 
 ⚠️ Transparency: N (Novelty), C (Constraint), and L (Cognitive Load) are human-interpreted metrics designed to visualize patterns in LLM outputs. They do not imply reasoning, cognition, or agency inside the model.
 
@@ -106,6 +108,8 @@ Measurable Basis: These metrics are paired with perplexity and attention entropy
 Reproducibility: All code and synthetic datasets are included in this repo for verification. Users can run simulations and compare patterns directly.
 
 Purpose: The framework highlights structural dynamics under sustained, high-directional prompts — token prediction behavior under constraint accumulation in sparse training regions. It’s meant as a practical, falsifiable benchmark, not a claim of emergent reasoning.
+
+
 
 ###
 
