@@ -1,7 +1,4 @@
-# mms repo
-### main repo link [ https://github.com/Kaleb-Wasierski/Kaleb-Wasierski ]
-
-- The Conversation Pipeline
+# The Conversation Pipeline
 
 1. Input: User sends a message.
 
@@ -14,11 +11,11 @@
 
 4. Metrics Computation:
 
-Novelty : Compare  against previous embeddings  using cosine similarity.
+### Novelty : Compare  against previous embeddings  using cosine similarity.
 
-Constraint : Compute entropy over LLM’s next-token probabilities for that turn.
+### Constraint : Compute entropy over LLM’s next-token probabilities for that turn.
 
-Cognitive Load : Compute attention variance or embedding variance across tokens.
+### Cognitive Load : Compute attention variance or embedding variance across tokens.
 
 
 
@@ -28,7 +25,7 @@ Cognitive Load : Compute attention variance or embedding variance across tokens.
 6. Store metrics in sequence:
 
 
-- Real-Time Interaction
+## Real-Time Interaction
 
 While conversing, you can do:
 
@@ -43,11 +40,11 @@ Example:
 
 Turn	N	C	L
 
-1	|| 0.9	0.3	0.1
+1| 0.9	0.3	0.1
 
-2	|| 0.2	0.7	0.05
+2| 0.2	0.7	0.05
 
-3	|| 0.6	0.4	0.15
+3| 0.6	0.4	0.15
 
 
 From this, you can see which turns are exploratory (high N, low C) vs routine (low N, high C), and where cognitive effort is concentrated.
@@ -55,7 +52,7 @@ From this, you can see which turns are exploratory (high N, low C) vs routine (l
 
 ---
 
-- LLM “Self-Analysis” Conversation
+## LLM “Self-Analysis” Conversation
 
 You could have an LLM analyze itself in real-time:
 
@@ -70,7 +67,7 @@ You could have an LLM analyze itself in real-time:
 
 4. Calculate  and display:
 
-“This response is moderately novel (0.6), moderately constrained (0.4), and has slightly high cognitive load (0.15).”
+### “This response is moderately novel (0.6), moderately constrained (0.4), and has slightly high cognitive load (0.15).”
 
 
 
