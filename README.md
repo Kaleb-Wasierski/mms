@@ -94,6 +94,25 @@ Decision making: Use metrics to guide conversation strategies: exploration, clar
 
 
 ---
+
+### Use Case: Multilingual Brand Consistency & Tone Stability 🌍
+
+One exciting real-world application: ensuring the **core brand message** (tone, personality, intent) stays consistent when prompts are translated or localized.
+
+Tiny input changes—like translating an English prompt to Chinese, Japanese, or adding cultural tweaks—can cause massive output shifts: novelty drops, tone flips (e.g., playful → overly formal), or constraint violations.
+
+This benchmark's perturbation sensitivity metrics (novelty variance, semantic drift, etc.) naturally catch these failures, helping evaluate if an LLM preserves the "brand soul" across languages.
+
+Shoutout to [Dr. LS (@GEOInsightsGEO)](https://x.com/GEOInsightsGEO/status/2003338031261188100) for spotlighting this — it's a killer bridge from AI safety to global marketing needs.
+
+**Quick Example Perturbations to Try:**
+- Original: "Generate a confident, premium, slightly playful caption for a luxury watch launch."
+- Perturbed (translated): "为我们的奢侈手表发布创作一个自信、高端、略带俏皮的社交媒体文案。"
+- Perturbed (culturally adapted): "Make it premium and confident but respectful/humbler for East Asian audiences."
+
+Run both through your script and watch the metrics flag tone/novelty drift. 🚀
+
+---
 Benchmark #1 (testing & benchmarking conversational drift):
  https://github.com/Kaleb-Wasierski/mms/blob/main/inf-stability-benchmarking_v01.py
 - this is used for real time stability inference, from a user's input to track inherent novelty. Demo noise sampling (fully switchable from sample; just input your parameters and input noise). 
