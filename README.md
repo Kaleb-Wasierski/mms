@@ -11,11 +11,11 @@
 
 4. Metrics Computation:
 
-### Novelty : Compare  against previous embeddings  using cosine similarity.
+Novelty : Compare  against previous embeddings  using cosine similarity.
 
-### Constraint : Compute entropy over LLM’s next-token probabilities for that turn.
+Constraint : Compute entropy over LLM’s next-token probabilities for that turn.
 
-### Cognitive Load : Compute attention variance or embedding variance across tokens.
+Cognitive Load : Compute attention variance or embedding variance across tokens.
 
 
 
