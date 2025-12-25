@@ -1,5 +1,4 @@
 # The Conversation Pipeline
----
 
 1. Input: User sends a message.
 
@@ -25,7 +24,7 @@ Cognitive Load : Compute attention variance or embedding variance across tokens.
 
 6. Store metrics in sequence:
 
----
+
 
 ## Real-Time Interaction
 
@@ -52,7 +51,7 @@ Turn	N	C	L
 From this, you can see which turns are exploratory (high N, low C) vs routine (low N, high C), and where cognitive effort is concentrated.
 
 
----
+
 
 ## LLM “Self-Analysis” Conversation
 
