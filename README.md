@@ -95,12 +95,13 @@ Decision making: Use metrics to guide conversation strategies: exploration, clar
 
 
 ---
-Benchmark #1 (test):
+Benchmark #1 (testing & benchmarking conversational drift):
  https://github.com/Kaleb-Wasierski/mms/blob/main/inf-stability-benchmarking_v01.py
 - this is used for real time stability inference, from a user's input to track inherent novelty. Demo noise sampling (fully switchable from sample; just input your parameters and input noise). 
 
 
 ---
+Runtime conversation novelty tracking (via user input):
 
 https://github.com/Kaleb-Wasierski/mms/blob/main/cci-ollama-usage_v3.py
 - this is used for inference stability benchmarking. Fully working, with demo noise sampling (fully switchable from sample; just input your parameters and input noise). 
