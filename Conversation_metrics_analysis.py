@@ -1,3 +1,4 @@
+### there is likely an issue with this singular repo; Computation is inefficient and requires refactoring.
 """
 Conversation Metrics Analyzer (CMA) is a framework for analyzing LLM-driven or human-assisted conversations in real time. It quantifies each conversational turn using three primary metrics:
 
